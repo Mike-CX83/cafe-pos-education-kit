@@ -1,21 +1,39 @@
-# push this folder to github (son's repo)
+# push to github — madoxhankins-lang
 
-1. Create an **empty** repository on GitHub (no README) under his account.
+**Remote is already set** in this folder:
 
-2. In Terminal:
+`https://github.com/madoxhankins-lang/cafe-pos-education-kit.git`
+
+## step 1 — create the empty repo (required)
+
+`git push` fails with “repository not found” until this exists.
+
+1. Sign in as **madoxhankins-lang** on GitHub.
+2. Open **New repository**: [github.com/new](https://github.com/new)
+3. **Repository name:** `cafe-pos-education-kit`
+4. Choose **Public** (or Private).
+5. **Do not** add README, .gitignore, or license (keep it empty).
+6. Click **Create repository**.
+
+## step 2 — push from this mac
 
 ```bash
 cd ~/Desktop/cafe-pos-education-kit
-git remote add origin https://github.com/SON_USERNAME/REPO_NAME.git
 git push -u origin main
 ```
 
-Replace `SON_USERNAME` and `REPO_NAME` with his real repo. Use SSH instead of HTTPS if he uses SSH keys.
-
-3. If `origin` already exists from a mistake:
+If Git asks for credentials, use a **Personal Access Token** as the password (HTTPS), or set up **SSH** and change the remote:
 
 ```bash
-git remote remove origin
-git remote add origin <correct-url>
+git remote set-url origin git@github.com:madoxhankins-lang/cafe-pos-education-kit.git
+git push -u origin main
+```
+
+## different repo name?
+
+If you used another name on GitHub, fix the remote:
+
+```bash
+git remote set-url origin https://github.com/madoxhankins-lang/YOUR_REPO_NAME.git
 git push -u origin main
 ```
